@@ -1,0 +1,1924 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Best Friend Forever 💎❤️</title>
+
+<style>
+
+/* =========================
+   GOOGLE FONTS
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background:
+        radial-gradient(circle at top left, #ff5ca8 0%, transparent 30%),
+        radial-gradient(circle at bottom right, #7200ff 0%, transparent 35%),
+        linear-gradient(135deg, #19002e, #5a004d, #19002e);
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   FLOATING EMOJIS
+========================= */
+
+.floating {
+    position: fixed;
+    bottom: -80px;
+    font-size: 35px;
+    opacity: .65;
+    pointer-events: none;
+    z-index: 0;
+
+    animation:
+        floatUp linear infinite;
+}
+
+@keyframes floatUp {
+
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .7;
+    }
+
+    90% {
+        opacity: .7;
+    }
+
+    to {
+        transform: translateY(-120vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: min(950px, 92%);
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================
+   SCREENS
+========================= */
+
+.screen {
+    display: none;
+    min-height: 100vh;
+    padding: 35px 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen.active {
+    display: flex;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    width: 100%;
+    padding: 45px 30px;
+    text-align: center;
+
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 32px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.35),
+        inset 0 0 30px rgba(255,255,255,.04);
+
+    animation: cardIn .6s ease;
+}
+
+@keyframes cardIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+h1,
+h2,
+h3 {
+    font-family: 'Baloo 2', cursive;
+}
+
+h1 {
+    font-size: clamp(45px, 9vw, 85px);
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: clamp(32px, 7vw, 55px);
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.highlight {
+    color: #ffd6f0;
+    text-shadow: 0 0 15px #ff69b4;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    border: none;
+    padding: 15px 27px;
+    border-radius: 50px;
+
+    font-size: 17px;
+    font-weight: 800;
+    font-family: 'Poppins', sans-serif;
+
+    cursor: pointer;
+    transition: transform .25s, box-shadow .25s;
+
+    margin: 8px;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:hover {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+button:active {
+    transform: scale(.95);
+}
+
+.primary {
+    background: linear-gradient(45deg, #ff3b9d, #ff8ac6);
+    color: white;
+
+    box-shadow:
+        0 8px 25px rgba(255,59,157,.4);
+}
+
+.secondary {
+    background: white;
+    color: #70005d;
+}
+
+
+/* =========================
+   GAMES
+========================= */
+
+.game-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.game-area {
+    margin: 25px auto;
+    min-height: 200px;
+
+    position: relative;
+
+    border-radius: 25px;
+    background: rgba(0,0,0,.20);
+
+    padding: 20px;
+
+    overflow: hidden;
+}
+
+.score {
+    font-size: 18px;
+    margin: 10px;
+    color: #ffe1f1;
+}
+
+
+/* =========================
+   GAME 1
+========================= */
+
+.catch-heart {
+    position: absolute;
+
+    font-size: 45px;
+
+    cursor: pointer;
+    user-select: none;
+
+    transition:
+        transform .15s,
+        opacity .15s;
+
+    animation: heartPop .2s ease;
+}
+
+.catch-heart:hover {
+    transform: scale(1.25);
+}
+
+@keyframes heartPop {
+
+    from {
+        transform: scale(.3);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   GAME 2
+========================= */
+
+.mood-buttons button {
+    font-size: 28px;
+    background: rgba(255,255,255,.15);
+}
+
+.mood-buttons button:hover {
+    background: rgba(255,255,255,.3);
+}
+
+# moodResult {
+    margin-top: 20px;
+}
+
+
+/* =========================
+   GAME 3
+========================= */
+
+.truth-box {
+    font-size: 24px;
+    min-height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   BEST FRIEND QUESTION
+========================= */
+
+.question-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.question-buttons {
+    min-height: 230px;
+
+    position: relative;
+
+    width: 100%;
+    max-width: 650px;
+
+    margin: 20px auto 0;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+}
+
+#yesBtn {
+    position: absolute;
+
+    left: 50%;
+    top: 20px;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    transition:
+        left .25s ease,
+        top .25s ease,
+        transform .25s ease;
+}
+
+#yesBtn:hover {
+    transform: translateX(-50%) scale(1.08) rotate(-2deg);
+}
+
+#noBtn {
+    position: absolute;
+
+    left: 50%;
+    top: 110px;
+
+    transform: translateX(-50%);
+
+    z-index: 5;
+
+    transition:
+        left .2s ease,
+        top .2s ease,
+        transform .2s ease;
+}
+
+#message {
+    min-height: 35px;
+
+    color: #ffd1e8;
+    font-weight: 700;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   SURPRISE
+========================= */
+
+#surprise {
+    position: relative;
+}
+
+.gift {
+    display: inline-block;
+
+    font-size: 100px;
+
+    cursor: pointer;
+
+    animation:
+        giftBounce 1s infinite alternate;
+
+    filter:
+        drop-shadow(0 0 20px #ff5cad);
+
+    user-select: none;
+}
+
+@keyframes giftBounce {
+
+    from {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    to {
+        transform: translateY(-15px) rotate(5deg);
+    }
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+    display: none;
+
+    margin-top: 25px;
+
+    text-align: left;
+
+    background: rgba(255,255,255,.95);
+
+    color: #4a1740;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    animation:
+        letterOpen 1s ease;
+}
+
+.letter.show {
+    display: block;
+}
+
+@keyframes letterOpen {
+
+    from {
+        opacity: 0;
+        transform: scale(.5) rotate(-5deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+.letter h3 {
+    font-size: 32px;
+    color: #d60078;
+    margin-bottom: 12px;
+}
+
+.heart-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #c3006e;
+    margin: 18px 0;
+}
+
+.crazy {
+    background: linear-gradient(45deg, #ff0099, #7000ff);
+
+    color: white;
+
+    padding: 18px;
+
+    border-radius: 20px;
+
+    margin-top: 20px;
+
+    font-weight: 700;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   CONFETTI
+========================= */
+
+.confetti {
+    position: fixed;
+
+    width: 10px;
+    height: 15px;
+
+    top: -20px;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    animation:
+        confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+
+    to {
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   SHAKE
+========================= */
+
+.shake {
+    animation: shake .4s;
+}
+
+@keyframes shake {
+
+    0%,100% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(-10px) rotate(-2deg);
+    }
+
+    40% {
+        transform: translateX(10px) rotate(2deg);
+    }
+
+    60% {
+        transform: translateX(-8px);
+    }
+
+    80% {
+        transform: translateX(8px);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .screen {
+        padding: 20px 0;
+    }
+
+    .card {
+        padding: 28px 18px;
+        border-radius: 24px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    button {
+        padding: 13px 20px;
+        font-size: 15px;
+    }
+
+    .game-area {
+        min-height: 210px;
+    }
+
+    .letter {
+        padding: 22px;
+    }
+
+    .question-buttons {
+        min-height: 250px;
+    }
+
+    #yesBtn {
+        top: 25px;
+    }
+
+    #noBtn {
+        top: 120px;
+    }
+
+    .gift {
+        font-size: 80px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     FLOATING BACKGROUND
+========================= -->
+
+<div class="floating" style="left:5%;animation-duration:9s;">💖</div>
+<div class="floating" style="left:15%;animation-duration:12s;">😂</div>
+<div class="floating" style="left:30%;animation-duration:10s;">💎</div>
+<div class="floating" style="left:48%;animation-duration:14s;">🫶</div>
+<div class="floating" style="left:65%;animation-duration:11s;">🤣</div>
+<div class="floating" style="left:80%;animation-duration:13s;">❤️</div>
+<div class="floating" style="left:92%;animation-duration:8s;">👑</div>
+
+
+<div class="container">
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section class="screen active" id="intro">
+
+    <div class="card">
+
+        <div style="font-size:75px;">
+            💎🫂😂
+        </div>
+
+        <h1>
+            Hey,<br>
+            <span class="highlight">
+                Crazy Human!
+            </span>
+        </h1>
+
+        <p>
+            This website is specially created for the person who somehow
+            survived being my best friend. 😭
+        </p>
+
+        <br>
+
+        <p>
+            Warning ⚠️: excessive friendship, stupidity,
+            emotional damage and uncontrollable laughter ahead.
+        </p>
+
+        <button
+            class="primary"
+            onclick="nextScreen('game1')">
+
+            Enter at your own risk 🚀
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GAME 1
+========================= -->
+
+<section class="screen" id="game1">
+
+    <div class="card">
+
+        <div class="game-title">
+            🎯 GAME 1: Catch the Hearts
+        </div>
+
+        <p>
+            Catch <b>5 hearts</b> before they escape!
+            Because this is very important research for the universe. 😂
+        </p>
+
+        <div class="score">
+
+            Hearts caught:
+            <span id="heartScore">0</span>/5
+
+        </div>
+
+        <div
+            class="game-area"
+            id="heartGame">
+        </div>
+
+        <button
+            class="secondary"
+            onclick="nextScreen('game2')">
+
+            I survived 😎
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GAME 2
+========================= -->
+
+<section class="screen" id="game2">
+
+    <div class="card">
+
+        <div class="game-title">
+            😂 GAME 2: What Kind of Bestie Are You?
+        </div>
+
+        <p>
+            Choose your current mental condition.
+        </p>
+
+        <div class="game-area mood-buttons">
+
+            <button onclick="mood('Normal')">
+                😇
+            </button>
+
+            <button onclick="mood('Crazy')">
+                🤪
+            </button>
+
+            <button onclick="mood('Dangerous')">
+                😈
+            </button>
+
+            <button onclick="mood('Absolutely Broken')">
+                💀
+            </button>
+
+            <h2
+                id="moodResult"
+                style="margin-top:20px;">
+
+                👀 Choose one...
+
+            </h2>
+
+        </div>
+
+        <button
+            class="secondary"
+            onclick="nextScreen('game3')">
+
+            Next nonsense ➡️
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GAME 3
+========================= -->
+
+<section class="screen" id="game3">
+
+    <div class="card">
+
+        <div class="game-title">
+            🎰 GAME 3: Best Friend Fortune Machine
+        </div>
+
+        <p>
+            Click the button and discover your extremely scientific destiny.
+        </p>
+
+        <div class="game-area">
+
+            <div
+                class="truth-box"
+                id="fortune">
+
+                🔮 Your destiny awaits...
+
+            </div>
+
+            <button
+                class="primary"
+                onclick="fortune()">
+
+                Reveal My Destiny 🔮
+
+            </button>
+
+        </div>
+
+        <button
+            class="secondary"
+            onclick="nextScreen('question')">
+
+            Enough games 😭
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     BEST FRIEND QUESTION
+========================= -->
+
+<section class="screen" id="question">
+
+    <div class="card question-card">
+
+        <div style="font-size:70px;">
+            🥺👉👈
+        </div>
+
+        <h2>
+            Okay... serious question.
+        </h2>
+
+        <p style="font-size:20px;">
+            After everything we've been through...
+        </p>
+
+        <br>
+
+        <h1 style="font-size:clamp(35px,8vw,65px);">
+
+            Am I your<br>
+
+            <span class="highlight">
+                BEST FRIEND?
+            </span>
+
+            🥹
+
+        </h1>
+
+
+        <!--
+             IMPORTANT:
+             The buttons are inside a fixed relative container.
+             Therefore the YES button can move around safely
+             without disappearing from the screen.
+        -->
+
+        <div class="question-buttons" id="questionArea">
+
+            <button
+                id="yesBtn"
+                class="primary"
+                onclick="yesClicked()">
+
+                YES 💖
+
+            </button>
+
+
+            <button
+                id="noBtn"
+                class="secondary"
+                onmouseenter="escapeNo()"
+                ontouchstart="escapeNo()"
+                onclick="noClicked()">
+
+                NO 😈
+
+            </button>
+
+        </div>
+
+
+        <div id="message">
+
+            Choose carefully... 👀
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SURPRISE
+========================= -->
+
+<section class="screen" id="surprise">
+
+    <div class="card">
+
+        <div style="font-size:25px;">
+            🎉🎉🎉 CONGRATULATIONS 🎉🎉🎉
+        </div>
+
+        <h2>
+            YOU ARE OFFICIALLY STUCK WITH ME FOREVER. 💀❤️
+        </h2>
+
+        <p>
+            You unlocked the legendary Best Friend Gift.
+        </p>
+
+        <br>
+
+        <div
+            class="gift"
+            onclick="openGift()">
+
+            🎁
+
+        </div>
+
+        <p>
+            Tap the suspiciously cute box. 👀
+        </p>
+
+
+        <div
+            class="letter"
+            id="letter">
+
+            <h3>
+                💌 To My Best Friend
+            </h3>
+
+            <p>
+                I don't know if I say this enough, but I genuinely feel
+                very lucky to have you as my best friend, ANILEYY..!!.
+            </p>
+
+            <p>
+                You stood by me when I was going through one of the
+                hardest situations in my life. When my heart was broken
+                and I didn't know what to do, you were there.
+            </p>
+
+            <p>
+                You comforted me, listened to my non-sense talks,
+                stayed beside me, and somehow managed to make me laugh
+                even when I didn't feel like smiling.
+            </p>
+
+            <p class="heart-text">
+                You are honestly a GEM. 💎
+            </p>
+
+            <p>
+                Having someone who doesn't disappear when things get
+                difficult is something I will always appreciate.
+                Thank you for being loyal, for understanding me,
+                and for being there when I needed someone the most.
+            </p>
+
+            <p>
+                I am genuinely lucky to call you my best friend.
+                🫂❤️
+            </p>
+
+
+            <div class="crazy">
+
+                😂 NOW FOR THE IMPORTANT PART 😂
+
+                <br><br>
+
+                You are officially my:
+                <br><br>
+
+                🧠 Mental Support System<br>
+                🤡 Personal Clown<br>
+                🕵️ Partner in Crime<br>
+                📞 24/7 Complaint Department<br>
+                💀 Permanent Headache<br>
+                😂 Unlimited Laughing Partner<br>
+                🫂 Emergency Hug Department<br>
+                💎 Certified Rare Human<br>
+                👑 BEST FRIEND FOREVER
+
+            </div>
+
+            <br>
+
+            <p>
+                And just so you know...
+            </p>
+
+            <p class="heart-text">
+
+                No matter how crazy life gets,
+                I hope our friendship stays crazier. 😂❤️
+
+            </p>
+
+            <p>
+                Thank you for standing with me when I needed someone.
+                Thank you for tolerating my mood swings and being my best friend.
+            </p>
+
+            <h2
+                style="text-align:center;color:#d60078;">
+
+                BEST FRIENDS FOREVER ♾️❤️
+
+            </h2>
+
+            <p style="text-align:center;">
+
+                (Unfortunately, there is no unsubscribe button.) 😭😂
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</div>
+
+
+<script>
+
+
+/* =====================================================
+   SCREEN NAVIGATION
+===================================================== */
+
+function nextScreen(id) {
+
+    document.querySelectorAll('.screen').forEach(screen => {
+
+        screen.classList.remove('active');
+
+    });
+
+    const target = document.getElementById(id);
+
+    if (!target) return;
+
+    target.classList.add('active');
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
+
+    if (id === 'game1') {
+
+        startHeartGame();
+
+    }
+
+
+    if (id === 'question') {
+
+        resetQuestion();
+
+    }
+
+}
+
+
+/* =====================================================
+   GAME 1 — CATCH HEARTS
+===================================================== */
+
+let heartScore = 0;
+let heartStarted = false;
+
+function startHeartGame() {
+
+    if (heartStarted) return;
+
+    heartStarted = true;
+
+    const game =
+        document.getElementById('heartGame');
+
+
+    function spawnHeart() {
+
+        if (heartScore >= 5) return;
+
+        const heart =
+            document.createElement('div');
+
+        heart.className =
+            'catch-heart';
+
+        const hearts = [
+            '❤️',
+            '💖',
+            '💗',
+            '💘',
+            '💕'
+        ];
+
+        heart.innerHTML =
+            hearts[
+                Math.floor(Math.random() * hearts.length)
+            ];
+
+
+        /*
+         * Keep the heart inside the game box.
+         */
+
+        const maxLeft =
+            Math.max(0, game.clientWidth - 60);
+
+        const maxTop =
+            Math.max(0, game.clientHeight - 70);
+
+
+        heart.style.left =
+            Math.random() * maxLeft + 'px';
+
+        heart.style.top =
+            Math.random() * maxTop + 'px';
+
+
+        heart.onclick = function() {
+
+            heartScore++;
+
+            document.getElementById(
+                'heartScore'
+            ).textContent = heartScore;
+
+            heart.remove();
+
+
+            if (heartScore < 5) {
+
+                setTimeout(
+                    spawnHeart,
+                    250
+                );
+
+            } else {
+
+                game.innerHTML =
+
+                    '<div style="font-size:50px;">' +
+                    '🏆😂❤️' +
+                    '</div>' +
+
+                    '<h2>' +
+                    'You caught them all!' +
+                    '</h2>' +
+
+                    '<p>' +
+                    'Okay fine... you are fast. ' +
+                    'Suspiciously fast.' +
+                    '</p>';
+
+            }
+
+        };
+
+
+        game.appendChild(heart);
+
+
+        /*
+         * Heart disappears after 1.5 seconds.
+         */
+
+        setTimeout(() => {
+
+            if (
+                document.body.contains(heart)
+            ) {
+
+                heart.remove();
+
+                if (heartScore < 5) {
+                    spawnHeart();
+                }
+
+            }
+
+        }, 1500);
+
+    }
+
+
+    spawnHeart();
+
+}
+
+
+/* =====================================================
+   GAME 2 — MOOD
+===================================================== */
+
+function mood(type) {
+
+    const results = {
+
+        "Normal":
+            "😇 Normal?! LIAR. I KNOW YOU BETTER.",
+
+        "Crazy":
+            "🤪 Correct! Certified Crazy Best Friend.",
+
+        "Dangerous":
+            "😈 Everyone hide. The bestie has arrived.",
+
+        "Absolutely Broken":
+            "💀 SAME. WE SHARE ONE BRAIN CELL."
+
+    };
+
+
+    const result =
+        document.getElementById('moodResult');
+
+
+    result.innerHTML =
+        results[type];
+
+
+    result.classList.remove('shake');
+
+
+    /*
+     * Force browser to restart animation.
+     */
+
+    void result.offsetWidth;
+
+
+    result.classList.add('shake');
+
+}
+
+
+/* =====================================================
+   GAME 3 — FORTUNE
+===================================================== */
+
+function fortune() {
+
+    const fortunes = [
+
+        "🔮 You will become rich... after finding ₹20 in your pocket.",
+
+        "🔮 You are destined to annoy your best friend forever.",
+
+        "🔮 Your future contains unlimited food and zero responsibilities.",
+
+        "🔮 Scientists have confirmed: you are 73% crazy.",
+
+        "🔮 You will achieve greatness. But first, take a nap.",
+
+        "🔮 Your best friend will continue bothering you for eternity.",
+
+        "🔮 You have been diagnosed with chronic best-friendship. No cure exists.",
+
+        "🔮 Your destiny: laugh at completely inappropriate moments."
+
+    ];
+
+
+    const result =
+        fortunes[
+            Math.floor(
+                Math.random() * fortunes.length
+            )
+        ];
+
+
+    document.getElementById(
+        'fortune'
+    ).innerHTML = result;
+
+}
+
+
+/* =====================================================
+   YES BUTTON
+   FIXED VERSION
+===================================================== */
+
+let yesAttempts = 0;
+
+function resetQuestion() {
+
+    yesAttempts = 0;
+
+
+    const yes =
+        document.getElementById('yesBtn');
+
+    const no =
+        document.getElementById('noBtn');
+
+    const message =
+        document.getElementById('message');
+
+
+    /*
+     * Reset YES button.
+     */
+
+    yes.style.position = 'absolute';
+
+    yes.style.left = '50%';
+
+    yes.style.top = '20px';
+
+    yes.style.transform =
+        'translateX(-50%)';
+
+
+    /*
+     * Reset NO button.
+     */
+
+    no.style.left = '50%';
+
+    no.style.top = '110px';
+
+    no.style.transform =
+        'translateX(-50%)';
+
+
+    message.innerHTML =
+        'Choose carefully... 👀';
+
+}
+
+
+/*
+ * YES button runs away only 3 times.
+ *
+ * Click 1 → moves
+ * Click 2 → moves
+ * Click 3 → moves
+ * Click 4 → accepts and opens surprise
+ */
+
+function yesClicked() {
+
+    const yes =
+        document.getElementById('yesBtn');
+
+    const area =
+        document.getElementById('questionArea');
+
+    const message =
+        document.getElementById('message');
+
+
+    yesAttempts++;
+
+
+    /*
+     * FIRST 3 CLICKS
+     */
+
+    if (yesAttempts <= 3) {
+
+
+        /*
+         * Make sure button is absolute
+         * and contained inside questionArea.
+         */
+
+        yes.style.position =
+            'absolute';
+
+
+        /*
+         * Get dimensions.
+         */
+
+        const areaWidth =
+            area.clientWidth;
+
+        const areaHeight =
+            area.clientHeight;
+
+        const buttonWidth =
+            yes.offsetWidth;
+
+        const buttonHeight =
+            yes.offsetHeight;
+
+
+        /*
+         * Calculate safe boundaries.
+         *
+         * This prevents the button from
+         * disappearing outside the box.
+         */
+
+        const padding = 10;
+
+        const maxX =
+            Math.max(
+                padding,
+                areaWidth -
+                buttonWidth -
+                padding
+            );
+
+        const maxY =
+            Math.max(
+                padding,
+                areaHeight -
+                buttonHeight -
+                padding
+            );
+
+
+        /*
+         * Random position.
+         */
+
+        const randomX =
+            padding +
+            Math.random() *
+            Math.max(
+                0,
+                maxX - padding
+            );
+
+
+        const randomY =
+            padding +
+            Math.random() *
+            Math.max(
+                0,
+                maxY - padding
+            );
+
+
+        /*
+         * IMPORTANT:
+         *
+         * Because YES is absolute inside
+         * questionArea, these coordinates
+         * are relative to questionArea.
+         */
+
+        yes.style.left =
+            randomX + 'px';
+
+        yes.style.top =
+            randomY + 'px';
+
+
+        /*
+         * Remove translateX because
+         * coordinates now start from
+         * the left edge.
+         */
+
+        yes.style.transform =
+            'none';
+
+
+        const messages = [
+
+            "HAHAHA TOO SLOW 😂",
+
+            "NOPE! TRY AGAIN! 🏃‍♂️",
+
+            "YOU THOUGHT YOU COULD ESCAPE? 😭"
+
+        ];
+
+
+        message.innerHTML =
+            messages[yesAttempts - 1];
+
+
+        /*
+         * Small shake effect.
+         */
+
+        message.classList.remove(
+            'shake'
+        );
+
+        void message.offsetWidth;
+
+        message.classList.add(
+            'shake'
+        );
+
+
+        return;
+    }
+
+
+    /*
+     * 4TH CLICK
+     *
+     * YES finally works.
+     */
+
+    message.innerHTML =
+        "FINEEEEEE! YOU EARNED IT. 😂❤️";
+
+
+    /*
+     * Put YES back into the center.
+     */
+
+    yes.style.position =
+        'absolute';
+
+    yes.style.left =
+        '50%';
+
+    yes.style.top =
+        '20px';
+
+    yes.style.transform =
+        'translateX(-50%)';
+
+
+    /*
+     * Disable further clicking
+     * while transition happens.
+     */
+
+    yes.disabled = true;
+
+
+    setTimeout(() => {
+
+        nextScreen('surprise');
+
+        startConfetti();
+
+        emojiExplosion();
+
+        /*
+         * Allow it again if the user
+         * somehow returns to this page.
+         */
+
+        yes.disabled = false;
+
+    }, 900);
+
+}
+
+
+/* =====================================================
+   NO BUTTON
+===================================================== */
+
+function escapeNo() {
+
+    const no =
+        document.getElementById('noBtn');
+
+    const area =
+        document.getElementById('questionArea');
+
+
+    const areaWidth =
+        area.clientWidth;
+
+    const areaHeight =
+        area.clientHeight;
+
+
+    const buttonWidth =
+        no.offsetWidth;
+
+    const buttonHeight =
+        no.offsetHeight;
+
+
+    const padding = 10;
+
+
+    const maxX =
+        Math.max(
+            padding,
+            areaWidth -
+            buttonWidth -
+            padding
+        );
+
+
+    const maxY =
+        Math.max(
+            padding,
+            areaHeight -
+            buttonHeight -
+            padding
+        );
+
+
+    const randomX =
+        padding +
+        Math.random() *
+        Math.max(
+            0,
+            maxX - padding
+        );
+
+
+    const randomY =
+        padding +
+        Math.random() *
+        Math.max(
+            0,
+            maxY - padding
+        );
+
+
+    no.style.left =
+        randomX + 'px';
+
+    no.style.top =
+        randomY + 'px';
+
+    no.style.transform =
+        'none';
+
+
+    document.getElementById(
+        'message'
+    ).innerHTML =
+        "THE NO BUTTON HAS LEFT THE CHAT. 🏃‍♂️💨";
+
+}
+
+
+function noClicked() {
+
+    escapeNo();
+
+
+    document.getElementById(
+        'message'
+    ).innerHTML =
+        "Nice try 😂 The universe rejected your NO.";
+
+}
+
+
+/* =====================================================
+   GIFT
+===================================================== */
+
+function openGift() {
+
+    const letter =
+        document.getElementById('letter');
+
+    const gift =
+        document.querySelector('.gift');
+
+
+    letter.classList.add('show');
+
+
+    startConfetti();
+
+    emojiExplosion();
+
+
+    gift.innerHTML = '🎉';
+
+
+    setTimeout(() => {
+
+        gift.innerHTML = '💎';
+
+    }, 700);
+
+}
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
+
+function startConfetti() {
+
+    const colors = [
+
+        '#ff2f92',
+        '#ffd700',
+        '#00ffff',
+        '#7cff00',
+        '#ffffff',
+        '#ff6b00',
+        '#a855f7'
+
+    ];
+
+
+    for (
+        let i = 0;
+        i < 130;
+        i++
+    ) {
+
+        const piece =
+            document.createElement('div');
+
+
+        piece.className =
+            'confetti';
+
+
+        piece.style.left =
+            Math.random() * 100 + 'vw';
+
+
+        piece.style.background =
+            colors[
+                Math.floor(
+                    Math.random() *
+                    colors.length
+                )
+            ];
+
+
+        piece.style.animationDuration =
+            (
+                Math.random() * 3 + 2
+            ) + 's';
+
+
+        piece.style.animationDelay =
+            Math.random() * 1.5 + 's';
+
+
+        piece.style.transform =
+            `rotate(${Math.random() * 360}deg)`;
+
+
+        document.body.appendChild(piece);
+
+
+        setTimeout(() => {
+
+            piece.remove();
+
+        }, 6000);
+
+    }
+
+}
+
+
+/* =====================================================
+   EMOJI EXPLOSION
+===================================================== */
+
+function emojiExplosion() {
+
+    const emojis = [
+
+        '❤️',
+        '😂',
+        '🤣',
+        '💎',
+        '🫂',
+        '✨',
+        '🎉',
+        '🥹',
+        '🤪',
+        '👑'
+
+    ];
+
+
+    for (
+        let i = 0;
+        i < 30;
+        i++
+    ) {
+
+        const e =
+            document.createElement('div');
+
+
+        e.innerHTML =
+            emojis[
+                Math.floor(
+                    Math.random() *
+                    emojis.length
+                )
+            ];
+
+
+        e.style.position =
+            'fixed';
+
+        e.style.left =
+            '50%';
+
+        e.style.top =
+            '50%';
+
+        e.style.fontSize =
+            '25px';
+
+        e.style.zIndex =
+            '9999';
+
+        e.style.pointerEvents =
+            'none';
+
+
+        const x =
+            (
+                Math.random() - .5
+            ) * window.innerWidth;
+
+
+        const y =
+            (
+                Math.random() - .5
+            ) * window.innerHeight;
+
+
+        e.animate(
+
+            [
+
+                {
+                    transform:
+                        'translate(-50%,-50%) scale(.3)',
+
+                    opacity: 1
+                },
+
+                {
+
+                    transform:
+                        `translate(${x}px,${y}px) scale(1.5) rotate(360deg)`,
+
+                    opacity: 0
+
+                }
+
+            ],
+
+            {
+
+                duration: 1500,
+
+                easing:
+                    'cubic-bezier(.17,.67,.35,1)'
+
+            }
+
+        );
+
+
+        document.body.appendChild(e);
+
+
+        setTimeout(() => {
+
+            e.remove();
+
+        }, 1600);
+
+    }
+
+}
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+document.addEventListener(
+    'DOMContentLoaded',
+    () => {
+
+        resetQuestion();
+
+    }
+);
+
+</script>
+
+</body>
+</html>
